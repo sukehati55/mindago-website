@@ -18,6 +18,7 @@
   --white: #ffffff;
   --container: 75rem;
   --header-height: 5rem;
+  --header-offset: 112px;
   --radius-small: 0.9rem;
   --radius-medium: 1.4rem;
   --radius-large: 2rem;
@@ -37,7 +38,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 1rem);
+  scroll-padding-top: calc(var(--header-offset) / 2);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-offset) / 2);
 }
 
 body {
@@ -380,7 +385,7 @@ html.has-js .site-nav.is-open {
 
 .hero {
   position: relative;
-  padding-block: clamp(3rem, 7vw, 6.4rem);
+  padding-block: clamp(2.6rem, 5.6vw, 5.4rem);
   overflow: hidden;
   background:
     radial-gradient(circle at 8% 12%, rgba(255, 216, 113, 0.32), transparent 18rem),
@@ -411,9 +416,14 @@ html.has-js .site-nav.is-open {
   max-width: 42rem;
 }
 
+.hero h1 {
+  margin-bottom: 1rem;
+  line-height: 1.02;
+}
+
 .hero-summary {
   max-width: 39rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.3rem;
   color: var(--muted);
   font-size: clamp(1.05rem, 2.6vw, 1.24rem);
 }
@@ -430,7 +440,7 @@ html.has-js .site-nav.is-open {
 
 .hero-note {
   display: flex;
-  margin: 1.3rem 0 0;
+  margin: 1.05rem 0 0;
   flex-wrap: wrap;
   gap: 0.4rem 1rem;
   color: var(--muted);
@@ -459,7 +469,7 @@ html.has-js .site-nav.is-open {
   width: 100%;
   max-width: 43rem;
   margin-inline: auto;
-  padding: 0 0.8rem 2.5rem;
+  padding: 0 0.8rem 1.6rem;
 }
 
 .product-preview,
@@ -506,27 +516,17 @@ html.has-js .site-nav.is-open {
   text-align: center;
 }
 
-.hero-migo,
-.hero-egg {
+.hero-migo {
   position: absolute;
   z-index: 4;
+  right: 0;
+  bottom: 1rem;
+  display: none;
+  width: clamp(7.5rem, 11vw, 10.5rem);
   height: auto;
+  aspect-ratio: 1;
   object-fit: contain;
   pointer-events: none;
-}
-
-.hero-migo {
-  right: -2%;
-  bottom: -2%;
-  width: clamp(5.2rem, 18vw, 10rem);
-  aspect-ratio: 1;
-}
-
-.hero-egg {
-  bottom: 0;
-  left: -2%;
-  width: clamp(3.7rem, 12vw, 6.5rem);
-  aspect-ratio: 1;
 }
 
 .guides-section {
@@ -583,8 +583,8 @@ html.has-js .site-nav.is-open {
 }
 
 .guide-art-egg {
-  height: 11.5rem;
-  margin-block: 1.5rem 0;
+  height: 13rem;
+  margin: 0;
 }
 
 .guide-card > div:last-child {
@@ -839,8 +839,8 @@ html.has-js .site-nav.is-open {
 }
 
 .approach-intro {
-  position: relative;
-  padding-bottom: 9rem;
+  display: grid;
+  align-content: start;
 }
 
 .approach-intro > p:not(.eyebrow) {
@@ -849,6 +849,7 @@ html.has-js .site-nav.is-open {
 }
 
 .approach-intro blockquote {
+  margin-bottom: 0;
   padding: 1.15rem 1.25rem;
   border-left: 0.35rem solid var(--gold);
   border-radius: 0 var(--radius-small) var(--radius-small) 0;
@@ -857,13 +858,25 @@ html.has-js .site-nav.is-open {
   font-weight: 800;
 }
 
-.approach-intro img {
+.approach-mindy {
+  position: relative;
+  display: grid;
+  height: clamp(13rem, 32vw, 16rem);
+  margin-top: 1.4rem;
+  border: 1px solid rgba(27, 108, 168, 0.12);
+  border-radius: var(--radius-large);
+  place-items: end center;
+  background: linear-gradient(145deg, var(--sky-soft), #fff3d2);
+  overflow: hidden;
+}
+
+.approach-mindy img {
   position: absolute;
-  right: 0;
-  bottom: -1rem;
-  width: 10rem;
-  height: 10rem;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center bottom;
 }
 
 .principle-list {
@@ -1354,6 +1367,10 @@ html.has-js [data-reveal].is-visible {
     font-size: clamp(3.2rem, 5.3vw, 4.7rem);
   }
 
+  .hero-migo {
+    display: block;
+  }
+
   .button-group .button {
     flex: 0 0 auto;
   }
@@ -1370,15 +1387,8 @@ html.has-js [data-reveal].is-visible {
     align-items: center;
   }
 
-  .approach-intro {
-    padding-bottom: 3rem;
-  }
-
-  .approach-intro img {
-    right: 1rem;
-    bottom: -2.5rem;
-    width: 11.5rem;
-    height: 11.5rem;
+  .approach-mindy {
+    height: 15rem;
   }
 
   .alpha-copy {
