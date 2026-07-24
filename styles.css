@@ -59,6 +59,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -442,21 +443,20 @@ html.has-js .site-nav.is-open {
   display: flex;
   margin: 1.05rem 0 0;
   flex-wrap: wrap;
-  gap: 0.4rem 1rem;
+  gap: 0.5rem 1rem;
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 700;
 }
 
 .hero-note span {
-  position: relative;
-  padding-left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
 .hero-note span::before {
-  position: absolute;
-  top: 0.57em;
-  left: 0;
+  flex: 0 0 0.38rem;
   width: 0.38rem;
   height: 0.38rem;
   border-radius: 50%;
@@ -490,8 +490,10 @@ html.has-js .site-nav.is-open {
 .playroom-image {
   width: 100%;
   height: auto;
+  aspect-ratio: 3 / 2;
   border-radius: calc(var(--radius-large) - 0.45rem);
   object-fit: contain;
+  object-position: center;
 }
 
 .preview-badge {
@@ -570,8 +572,9 @@ html.has-js .site-nav.is-open {
   position: relative;
   z-index: 1;
   display: grid;
-  height: 13rem;
+  height: clamp(13rem, 68vw, 18rem);
   place-items: center;
+  overflow: hidden;
 }
 
 .guide-art img {
@@ -583,7 +586,6 @@ html.has-js .site-nav.is-open {
 }
 
 .guide-art-egg {
-  height: 13rem;
   margin: 0;
 }
 
@@ -926,7 +928,7 @@ html.has-js .site-nav.is-open {
 
 .alpha-copy {
   position: relative;
-  padding-bottom: 9rem;
+  padding-bottom: 0;
 }
 
 .alpha-lead {
@@ -938,9 +940,12 @@ html.has-js .site-nav.is-open {
   position: absolute;
   right: 0;
   bottom: -2.5rem;
-  width: 11rem;
+  display: none;
+  width: min(11rem, 32vw);
   height: 11rem;
+  max-height: 11rem;
   object-fit: contain;
+  object-position: center bottom;
   opacity: 0.86;
 }
 
@@ -1280,6 +1285,10 @@ html.has-js [data-reveal].is-visible {
     width: min(100% - 3rem, var(--container));
   }
 
+  .guide-art {
+    height: 14rem;
+  }
+
   .guide-grid,
   .trust-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1398,12 +1407,17 @@ html.has-js [data-reveal].is-visible {
   .alpha-copy img {
     right: -2rem;
     bottom: -4rem;
+    display: block;
   }
 }
 
 @media (min-width: 64rem) {
   .guide-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .guide-art {
+    height: 13rem;
   }
 
   .guide-egg {
