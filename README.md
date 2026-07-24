@@ -15,8 +15,8 @@ mindago_website/
   README.md              Setup and deployment notes
   assets/
     branding/            Official MindAgo logo
-    screenshots/         Future product screenshots
-    characters/          Future approved character artwork
+    screenshots/         Approved Playroom marketing preview
+    characters/          Approved Migo, Professor Mindy, and Knowledge Egg artwork
     icons/               Future approved site icons
 ```
 
@@ -63,21 +63,22 @@ assets/branding/mindago_logo.svg
 
 Keep that path and filename when replacing the export. Preserve the SVG aspect ratio, transparent background, embedded colours, and clear space. The header and 404 page show a text-based MindAgo fallback if the SVG cannot load.
 
-### Product screenshots
+### Production imagery
 
-The Hero currently contains an accessible CSS illustration labelled as a temporary Playroom preview. To replace it:
+The homepage uses these approved assets directly:
 
-1. Add an optimized WebP or AVIF screenshot under `assets/screenshots/`.
-2. Replace the `.preview-frame` illustration in `index.html` with a `<picture>` element.
-3. Provide accurate alt text that explains what the screenshot shows.
-4. Include explicit image width and height to prevent layout movement.
-5. Keep the existing `<figcaption>` updated with honest release information.
+```text
+assets/screenshots/playroom_preview_day.png
+assets/characters/migo_default_1024.png
+assets/characters/mindy_welcome_warm_1024.png
+assets/characters/knowledge_egg_default_1024.png
+```
 
-Character artwork and icons must come from approved MindAgo production sources and belong in their matching asset folders. Do not use modeling sheets or unapproved drafts on the public site.
+Keep these paths stable when replacing approved exports. The Playroom image must retain its 3:2 aspect ratio, and character files must retain transparent backgrounds. Update meaningful alt text whenever the visible content changes materially. Do not use modeling sheets, lesson screenshots, or unapproved drafts on the public site.
 
 ## Connecting the Alpha form later
 
-The current form deliberately prevents network submission and displays a friendly preview message. It sends and stores nothing.
+The current form deliberately prevents network submission, keeps its primary action disabled, and clearly labels itself as a preview. It sends and stores nothing.
 
 To connect Google Forms or another form service later:
 
