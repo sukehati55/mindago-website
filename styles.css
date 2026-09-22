@@ -281,13 +281,6 @@ p {
   color: var(--blue);
 }
 
-.brand-lockup {
-  width: 4.65rem;
-  height: 4.65rem;
-  flex: 0 0 auto;
-  object-fit: contain;
-}
-
 .brand-mark {
   display: grid;
   width: 3.85rem;
