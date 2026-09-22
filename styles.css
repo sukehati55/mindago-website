@@ -1193,6 +1193,13 @@ html.has-js .site-nav.is-open {
   text-decoration: none;
 }
 
+.footer-brand img {
+  display: block;
+  width: 5.5rem;
+  height: auto;
+  object-fit: contain;
+}
+
 .footer-brand:hover,
 .footer-nav a:hover {
   color: var(--gold-soft);
