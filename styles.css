@@ -1561,3 +1561,9 @@ html.has-js [data-reveal].is-visible {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+/* Books discovery: scoped so the existing homepage sections stay unchanged. */
+.books-teaser { padding-block: 2.5rem; border-top: 1px solid var(--line); background: var(--sky-soft); }
+.books-teaser-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.books-teaser h2 { font-size: clamp(1.65rem, 3.5vw, 2.3rem); margin-bottom: .6rem; }
+.books-teaser p:not(.eyebrow) { color: var(--muted); }
+.books-teaser img { width: clamp(4rem, 10vw, 6rem); height: auto; object-fit: contain; flex: 0 0 auto; }

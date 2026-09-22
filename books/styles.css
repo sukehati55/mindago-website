@@ -1,0 +1,36 @@
+/* Inherit the homepage's colours, type, compact header and mobile navigation. */
+.books-intro { padding-block: clamp(2rem, 4vw, 3rem); background: var(--cream); }
+.books-intro-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.books-intro-inner > div { max-width: 46rem; min-width: 0; }
+.books-intro h1 { font-size: clamp(2.35rem, 5vw, 3.8rem); margin-bottom: 1rem; }
+.books-intro p:last-child { margin-bottom: 0; color: var(--muted); }
+.books-intro img { width: clamp(4rem, 11vw, 7rem); height: auto; object-fit: contain; flex: 0 0 auto; }
+.books-section { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.books-section .section-heading { margin-bottom: 1.5rem; }
+.books-section h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); }
+.book-grid, .book-benefit-grid, .books-more-grid { display: grid; gap: 1.3rem; }
+.book-card { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius-medium); overflow: hidden; background: var(--white); box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
+.book-cover-placeholder { min-height: 16rem; padding: 1.5rem; display: grid; place-items: center; background: var(--sky-soft); border-bottom: 1px solid var(--line); }
+.book-cover-placeholder span { display: grid; place-items: center; width: 9.5rem; aspect-ratio: 3 / 4; border: 1px dashed #a7bdcc; border-radius: .5rem; color: var(--muted); font-size: .9rem; background: #ffffff80; }
+/* Ready for approved cover artwork; never crop covers. */
+.book-cover { display: block; width: 100%; height: 16rem; object-fit: contain; padding: 1rem; background: var(--sky-soft); }
+.book-card-copy { padding: 1.35rem; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.book-card h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.01em; }
+.book-card p { color: var(--muted); }
+.book-focus { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: 0 0 1.3rem; }
+.book-focus li { padding: .3rem .65rem; border-radius: 999px; background: var(--cream); color: var(--navy); font-size: .78rem; font-weight: 700; }
+.book-card .button { margin-top: auto; width: 100%; }
+.amazon-note { font-size: .85rem; color: var(--muted); margin: 1.2rem 0 0; }
+.books-benefits { background: var(--sky-soft); }
+.book-benefit-grid article { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-medium); padding: 1.4rem; }
+.book-benefit-grid p { color: var(--muted); margin-bottom: 0; }
+.books-more-card { display: block; padding: 1.5rem; border-radius: var(--radius-medium); background: var(--cream); color: var(--navy); text-decoration: none; border: 1px solid var(--line); }
+.books-more-card p { color: var(--muted); }
+.books-more-card span { font-weight: 800; color: var(--blue); }
+.books-more-card:hover { border-color: var(--blue); }
+@media (min-width: 40rem) {
+  .book-grid, .books-more-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (min-width: 64rem) {
+  .book-grid, .book-benefit-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}

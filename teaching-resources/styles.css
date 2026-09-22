@@ -174,7 +174,7 @@ footer { padding: 1.7rem 0; background: #0a2239; color: #d8e7f0; }
 }
 @media (min-width: 64rem) { .cta { grid-template-columns: 1fr auto; } }
 @media (max-width: 47.99rem) {
-  .links a:not(.shop) { display: none; }
+  .links a:not(.shop):not(.books-link) { display: none; }
   .hero-art { max-width: 34rem; width: 100%; margin: auto; }
   .migo { width: 9rem; }
   .hero-panel { padding: 1.1rem 1.1rem 3rem; }
