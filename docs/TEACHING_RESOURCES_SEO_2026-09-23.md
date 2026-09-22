@@ -53,19 +53,21 @@ Homepage, Books, Amazon links, existing CSS, font binaries, character assets and
 | Minda Font Bundle | Yes | Yes | Yes | Category, Dots, Plain, guide | Yes |
 | Name Tracing Guide | Not applicable | Yes | Yes | Category and all three products | Yes |
 
-All five pages use one self-referencing trailing-slash canonical and `index, follow`. New pages include visible breadcrumbs. Product offers specify MYR, the brief's prices, InStock and NewCondition. No reviews or ratings were added. All content and links are static HTML.
+All five pages use one self-referencing trailing-slash canonical and `index, follow`. New pages include visible breadcrumbs. Product offers specify USD, the approved current prices, InStock and NewCondition. No reviews or ratings were added. All content and links are static HTML.
 
 No suitable genuine font promotional images were found in the repository. Product `image` and social image fields are intentionally omitted. Existing real webfonts power all specimens; no images were scraped or invented.
 
 ## Purchase destinations
 
-- Minda Dots: https://payhip.com/b/9gBRV — website RM19.90.
-- Minda Teaching Plain: https://payhip.com/b/frC05 — website RM9.99.
-- Minda Font Bundle: https://payhip.com/b/kgj7A — website RM24.99; RM4.90 savings.
+- Minda Dots: https://payhip.com/b/9gBRV — website $4.99.
+- Minda Teaching Plain: https://payhip.com/b/frC05 — website $2.99.
+- Minda Font Bundle: https://payhip.com/b/kgj7A — website $6.99; $0.99 savings.
 
 All three destinations opened the correct live product in the browser. No purchase was made.
 
-**Payhip discrepancies requiring separate owner review:** the observed purchase prices were $4.99, $2.99 and $6.99 respectively. The bundle description lists Dots RM19.99 and savings RM4.99. Payhip descriptions also claim punctuation, symbols and accented characters beyond the verified website set. This sprint follows the founder's explicit website pricing and coverage instructions; it does not modify Payhip or adopt those broader claims. Correct checkout currency/prices and downloadable-font coverage should be reconciled separately.
+**Pricing correction:** Payhip is officially priced in USD. The website and Product schema now use Dots $4.99, Plain $2.99 and Bundle $6.99. The separate-price total is $7.98, giving savings of $0.99. This supersedes the original SEO sprint pricing.
+
+**Coverage review remains separate:** the previously observed Payhip descriptions claim punctuation, symbols and accented characters beyond the verified website set. No such claims were added to the website. Payhip was not edited.
 
 ## Validation
 
