@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Minda Bold";
-  src: url("assets/fonts/minda-bold-v1.1.woff2") format("woff2");
+  src: url("assets/fonts/minda-bold-v2.0.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Minda Dots";
-  src: url("assets/fonts/minda-dots-v1.1.woff2") format("woff2");
+  src: url("assets/fonts/minda-dots-v2.0.woff2") format("woff2");
   font-display: swap;
 }
 :root {
