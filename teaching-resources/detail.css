@@ -11,6 +11,7 @@
 .hero .detail-price { font-size: 2rem; color: var(--navy); font-weight: 800; margin-block: 1rem; }
 .hero .delivery-note { font-size: .85rem; }
 .specimen-board { min-width: 0; padding: clamp(1rem,3vw,2rem); background: white; border: 2px solid #d5dfe8; border-radius: 1.7rem; box-shadow: var(--shadow); }
+.product-cover { display: block; width: min(100%, 20rem); height: auto; margin: 0 auto 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 26px rgba(31,52,76,.12); }
 .specimen-board h2, .specimen-board h3 { margin-top: 0; }
 .specimen { font-size: clamp(2.5rem,5vw,4rem); line-height: 1.5; overflow-wrap: anywhere; }
 .specimen.dots { background: var(--pink); border-radius: .8rem; padding: .3rem .6rem; }
