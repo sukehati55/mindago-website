@@ -1615,3 +1615,69 @@ html.has-js [data-reveal].is-visible {
   fill: currentColor;
   pointer-events: none;
 }
+
+
+/* Free sample discovery funnel */
+.free-sample-teaser {
+  padding-block: clamp(1.6rem, 4vw, 2.8rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(255, 224, 138, .34), transparent 20rem),
+    radial-gradient(circle at 90% 85%, rgba(238, 228, 255, .65), transparent 24rem),
+    var(--white);
+}
+
+.free-sample-teaser-inner {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.free-sample-teaser-art {
+  width: min(100%, 21rem);
+  margin-inline: auto;
+  padding: .65rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.free-sample-teaser-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.free-sample-teaser-copy h2 {
+  margin-bottom: .7rem;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+}
+
+.free-sample-teaser-copy > p:not(.eyebrow):not(.free-sample-teaser-note) {
+  max-width: 40rem;
+  color: var(--muted);
+}
+
+.free-sample-teaser-actions {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-top: 1.15rem;
+}
+
+.free-sample-teaser-note {
+  margin: .9rem 0 0;
+  color: var(--muted);
+  font-size: .88rem;
+  font-weight: 750;
+}
+
+@media (min-width: 48rem) {
+  .free-sample-teaser-inner {
+    grid-template-columns: minmax(13rem, .62fr) minmax(0, 1.38fr);
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+  }
+}
