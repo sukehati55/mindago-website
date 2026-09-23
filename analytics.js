@@ -159,6 +159,14 @@
         return;
       }
 
+      if (link.dataset.action === "free-sample-cta") {
+        window.gtag("event", "free_sample_cta_click", {
+          placement: link.dataset.placement || "unknown",
+          link_url: link.href
+        });
+        return;
+      }
+
       try {
         const url = new URL(link.href, window.location.href);
         if (/(^|\.)amazon\./i.test(url.hostname)) {
