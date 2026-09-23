@@ -151,6 +151,14 @@
         return;
       }
 
+      if (link.dataset.action === "free-sample" && link.dataset.sample) {
+        window.gtag("event", "free_sample_download", {
+          sample: link.dataset.sample,
+          link_url: link.href
+        });
+        return;
+      }
+
       try {
         const url = new URL(link.href, window.location.href);
         if (/(^|\.)amazon\./i.test(url.hostname)) {
