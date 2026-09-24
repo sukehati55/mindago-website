@@ -235,3 +235,15 @@ footer { padding: 1.7rem 0; background: #0a2239; color: #d8e7f0; }
 .printable-sample { gap:.45rem; align-items:center; color:var(--navy); }
 .printable-sample strong { font-size:1.35rem; }
 .printable-sample span { display:block; font-size:.92rem; color:var(--muted); }
+
+/* Pre-Writing Adventure cover and worksheet previews. */
+.printable-card-preview, .worksheet-preview img { display:block; width:100%; height:auto; object-fit:contain; border-radius:1rem; }
+.printable-card-preview { margin:1rem 0; box-shadow:0 5px 16px rgba(16,45,74,.08); }
+.worksheet-preview-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:1.5rem; }
+.worksheet-preview { min-width:0; margin:0; padding:1rem; border:1px solid #dce8ee; border-radius:1.5rem; background:#fff; box-shadow:0 5px 16px rgba(16,45,74,.06); }
+.worksheet-preview img[hidden] { display:none; }
+.worksheet-preview img:not([hidden]) + .preview-pending { display:none; }
+.preview-pending { display:grid; place-items:center; aspect-ratio:210/297; padding:1.5rem; margin:0; border-radius:1rem; background:var(--sky); color:var(--muted); text-align:center; }
+.worksheet-preview figcaption { margin-top:.8rem; color:var(--muted); text-align:center; font-size:.9rem; }
+@media (min-width:48rem) { .worksheet-preview-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:64rem) { .worksheet-preview-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
