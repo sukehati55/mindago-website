@@ -261,3 +261,17 @@ footer { padding: 1.7rem 0; background: #0a2239; color: #d8e7f0; }
   #printables .card-printable > .badge { justify-self:start; }
   #printables .card-printable > .btn { align-self:stretch; }
 }
+
+
+/* Minda Teaching Plain promo reel */
+.promo-reel { background: linear-gradient(180deg,#fffdf8 0%,#eef9ff 100%); }
+.promo-reel-grid { display:grid; gap:2rem; align-items:center; }
+.promo-reel-copy h2 { font-family:"Minda Bold",sans-serif; font-weight:400; font-size:clamp(2.1rem,3.5vw,3rem); line-height:1.15; margin:1rem 0 .7rem; }
+.promo-reel-copy p { color:var(--muted); max-width:38rem; }
+.promo-reel-actions { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.25rem; }
+.promo-reel-credit { font-size:.82rem; margin-top:1rem; }
+.promo-reel-video { width:min(100%,22rem); margin-inline:auto; padding:.55rem; border-radius:2rem; background:white; border:2px solid #d7e7ef; box-shadow:var(--shadow); }
+.promo-reel-video video { display:block; width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:1.45rem; background:#0a2239; }
+@media (min-width:48rem) {
+  .promo-reel-grid { grid-template-columns:minmax(0,1.1fr) minmax(18rem,.7fr); }
+}
