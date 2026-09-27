@@ -1681,3 +1681,8 @@ html.has-js [data-reveal].is-visible {
     gap: clamp(1.75rem, 4vw, 3.5rem);
   }
 }
+
+/* Compact workbook discovery within the existing teaching-resource teaser. */
+.az-resource-card { margin-top:1.5rem; padding:1.25rem; border:1px solid var(--line); border-radius:var(--radius-medium, 1rem); background:var(--white); }
+.az-resource-card h3 { margin:0 0 .5rem; }
+.az-resource-card p { margin:0 0 1rem; }

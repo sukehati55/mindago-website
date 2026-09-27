@@ -247,3 +247,17 @@ footer { padding: 1.7rem 0; background: #0a2239; color: #d8e7f0; }
 .worksheet-preview figcaption { margin-top:.8rem; color:var(--muted); text-align:center; font-size:.9rem; }
 @media (min-width:48rem) { .worksheet-preview-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (min-width:64rem) { .worksheet-preview-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+
+/* Align the paired printable cards without changing their content or artwork. */
+@media (min-width:48rem) {
+  #printables .products { row-gap:0; }
+  #printables .card-printable {
+    display:grid;
+    grid-template-rows:subgrid;
+    grid-row:span 9;
+    row-gap:0;
+    align-items:start;
+  }
+  #printables .card-printable > .badge { justify-self:start; }
+  #printables .card-printable > .btn { align-self:stretch; }
+}
