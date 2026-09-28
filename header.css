@@ -1,0 +1,73 @@
+/* Shared header geometry for every MindAgo page. Load after page styles. */
+:root {
+  --header-height: 84px;
+  --header-padding-x: 20px;
+  --logo-height: 48px;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: var(--header-height);
+  min-height: var(--header-height);
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.site-header__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 0 var(--header-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+.site-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  text-decoration: none;
+  line-height: 0;
+}
+.site-brand img {
+  display: block;
+  width: auto;
+  height: var(--logo-height);
+  max-width: 100%;
+  object-fit: contain;
+}
+.site-header .links { flex-wrap: nowrap; }
+@media (max-width:1024px) {
+  :root { --header-height:76px; --logo-height:44px; --header-padding-x:18px; }
+}
+@media (max-width:768px) {
+  :root { --header-height:70px; --logo-height:40px; --header-padding-x:16px; }
+  .site-header .links { gap:0; max-width:none; }
+  .site-header .links a { padding:.5rem; font-size:.85rem; }
+}
+@media (max-width:480px) {
+  :root { --header-height:64px; --logo-height:36px; --header-padding-x:14px; }
+}
+/* Keep the existing homepage/books menu below the fixed-height bar. */
+@media (max-width:52.99rem) {
+  .site-header .site-nav {
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    padding:1rem var(--header-padding-x);
+    box-sizing:border-box;
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+}
