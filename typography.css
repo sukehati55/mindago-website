@@ -1,0 +1,10 @@
+/* Shared UI typography; intentional Minda specimens keep their own families. */
+@font-face {
+  font-family: "Nunito";
+  src: url("/assets/fonts/nunito/nunito-latin-variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root { --font-ui: "Nunito", Arial, sans-serif; }
+button, input, select, textarea { font-family: inherit; }

@@ -70,7 +70,7 @@
         background: #fffdf7;
         color: #0c3052;
         box-shadow: 0 16px 40px rgba(12, 48, 82, .18);
-        font: 500 0.95rem/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font: 500 0.95rem/1.45 var(--font-ui);
       }
       .mindago-consent p { margin: 0; }
       .mindago-consent strong { font-weight: 800; }
