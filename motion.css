@@ -1,0 +1,41 @@
+/* MindAgo Motion System v1: decorative motion, no layout geometry changes. */
+.motion-region { position:relative; isolation:isolate; }
+.motion-stars { position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:-1; }
+/* The SVG starfield replaces the older saturated decorative star glyph. */
+.motion-region .doodle.star { display:none; }
+.motion-star {
+  position:absolute;
+  visibility:hidden;
+  width:var(--star-size);
+  height:var(--star-size);
+  color:var(--star-colour);
+  opacity:var(--star-opacity);
+  animation:mindago-drift var(--star-duration) ease-in-out var(--star-delay) infinite;
+}
+.motion-float { animation:mindago-float 6.5s ease-in-out infinite; }
+.books-intro .motion-float { animation-duration:5.7s; animation-delay:-2s; }
+.motion-stars .motion-star, .motion-float { animation-play-state:paused; }
+.motion-active .motion-star, .motion-float.motion-active { animation-play-state:running; }
+@keyframes mindago-drift {
+  0%,100% { transform:translateY(0) rotate(calc(-1 * var(--star-rotation))); opacity:var(--star-opacity); }
+  50% { transform:translateY(var(--star-drift)) rotate(var(--star-rotation)); opacity:var(--star-peak); }
+}
+@keyframes mindago-float { 0%,100% { translate:0 0; } 50% { translate:0 -6px; } }
+/* Fail open without JS or IntersectionObserver; replace the older home reveal. */
+html.has-js [data-reveal] { opacity:1; transform:none; }
+html.motion-ready [data-reveal] { transition:opacity 640ms ease, transform 640ms ease; transition-delay:var(--reveal-delay,0ms); }
+html.motion-ready [data-reveal]:not(.is-visible) { opacity:0; transform:translateY(20px); }
+html.motion-ready [data-reveal].is-visible { opacity:1; transform:none; }
+html.motion-ready [data-reveal]:focus-within { opacity:1; transform:none; transition:none; }
+@media (max-width:767px) {
+  @keyframes mindago-drift {
+    0%,100% { transform:translateY(0) rotate(calc(-1 * var(--star-rotation))); opacity:var(--star-opacity); }
+    50% { transform:translateY(var(--star-mobile-drift)) rotate(var(--star-rotation)); opacity:var(--star-peak); }
+  }
+  @keyframes mindago-float { 0%,100% { translate:0 0; } 50% { translate:0 -3px; } }
+  html.motion-ready [data-reveal]:not(.is-visible) { transform:translateY(16px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .motion-star, .motion-float { animation:none !important; translate:none !important; }
+  html.motion-ready [data-reveal] { opacity:1 !important; transform:none !important; transition:none !important; }
+}
