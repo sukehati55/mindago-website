@@ -113,3 +113,122 @@ if (alphaForm) {
     event.preventDefault();
   });
 }
+
+
+// ==========================================================================
+// Gameplay Gallery Lightbox Dialog & Mobile Carousel
+// ==========================================================================
+
+const gameplayDialog = document.getElementById("gameplay-dialog");
+if (gameplayDialog) {
+  const dialogImg = gameplayDialog.querySelector("[data-dialog-img]");
+  const dialogTitle = gameplayDialog.querySelector("[data-dialog-title]");
+  const dialogBenefit = gameplayDialog.querySelector("[data-dialog-benefit]");
+  const dialogClose = gameplayDialog.querySelector("[data-dialog-close]");
+
+  const openLightbox = (btn) => {
+    if (!dialogImg || !dialogTitle || !dialogBenefit) return;
+    dialogImg.src = btn.dataset.zoomSrc;
+    dialogImg.alt = btn.querySelector("img")?.alt || btn.dataset.zoomTitle;
+    dialogTitle.textContent = btn.dataset.zoomTitle;
+    dialogBenefit.textContent = btn.dataset.zoomBenefit;
+    if (typeof gameplayDialog.showModal === "function") {
+      gameplayDialog.showModal();
+    } else {
+      gameplayDialog.setAttribute("open", "");
+    }
+  };
+
+  const closeLightbox = () => {
+    if (typeof gameplayDialog.close === "function") {
+      gameplayDialog.close();
+    } else {
+      gameplayDialog.removeAttribute("open");
+    }
+  };
+
+  document.querySelectorAll("[data-zoom-src]").forEach((btn) => {
+    btn.addEventListener("click", () => openLightbox(btn));
+  });
+
+  if (dialogClose) {
+    dialogClose.addEventListener("click", closeLightbox);
+  }
+
+  gameplayDialog.addEventListener("click", (e) => {
+    const rect = gameplayDialog.getBoundingClientRect();
+    const isInDialog = (
+      rect.top <= e.clientY &&
+      e.clientY <= rect.top + rect.height &&
+      rect.left <= e.clientX &&
+      e.clientX <= rect.left + rect.width
+    );
+    if (!isInDialog) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && gameplayDialog.open) {
+      closeLightbox();
+    }
+  });
+}
+
+const carouselTrack = document.querySelector("[data-carousel-track]");
+const carouselPrev = document.querySelector("[data-carousel-prev]");
+const carouselNext = document.querySelector("[data-carousel-next]");
+const carouselDots = document.querySelectorAll("[data-carousel-dots] [data-slide-index]");
+
+if (carouselTrack) {
+  const getCardWidth = () => {
+    const card = carouselTrack.querySelector(".gameplay-card");
+    return card ? card.offsetWidth + 20 : 320;
+  };
+
+  if (carouselPrev) {
+    carouselPrev.addEventListener("click", () => {
+      carouselTrack.scrollBy({ left: -getCardWidth(), behavior: "smooth" });
+    });
+  }
+
+  if (carouselNext) {
+    carouselNext.addEventListener("click", () => {
+      carouselTrack.scrollBy({ left: getCardWidth(), behavior: "smooth" });
+    });
+  }
+
+  carouselDots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const index = parseInt(dot.dataset.slideIndex, 10);
+      const cards = carouselTrack.querySelectorAll(".gameplay-card");
+      if (cards[index]) {
+        cards[index].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+    });
+  });
+
+  let scrollTimeout;
+  carouselTrack.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const scrollCenter = carouselTrack.scrollLeft + carouselTrack.offsetWidth / 2;
+      const cards = Array.from(carouselTrack.querySelectorAll(".gameplay-card"));
+      let closestIdx = 0;
+      let minDiff = Infinity;
+      cards.forEach((card, idx) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const diff = Math.abs(scrollCenter - cardCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+      carouselDots.forEach((dot, idx) => {
+        const isActive = idx === closestIdx;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-selected", String(isActive));
+      });
+    }, 60);
+  }, { passive: true });
+}
