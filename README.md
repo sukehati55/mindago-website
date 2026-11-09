@@ -6,13 +6,15 @@ A fast, accessible, framework-free landing page for `https://mindago.my/`. The w
 
 ```text
 mindago_website/
-  index.html             Main landing page
+  index.html             Main landing page (MindAgo Playroom & Founding 50 Early Access)
   styles.css             Responsive layout and brand styling
-  script.js              Mobile navigation, logo fallback, and form preview
+  script.js              Mobile navigation and logo fallback
   404.html               Cloudflare Pages not-found page
   robots.txt             Search crawler rules
   sitemap.xml            Public site map
   README.md              Setup and deployment notes
+  books/                 Migo's Adventures activity books
+  teaching-resources/    Minda fonts, printable worksheets, and teaching guides
   assets/
     branding/            Official MindAgo logo
     screenshots/         Approved Playroom marketing preview
@@ -76,27 +78,21 @@ assets/characters/knowledge_egg_default_1024.png
 
 Keep these paths stable when replacing approved exports. The Playroom image must retain its 3:2 aspect ratio, and character files must retain transparent backgrounds. Update meaningful alt text whenever the visible content changes materially. Do not use modeling sheets, lesson screenshots, or unapproved drafts on the public site.
 
-## Connecting the Alpha form later
+## Founding 50 Early Access links
 
-The current form deliberately prevents network submission, keeps its primary action disabled, and clearly labels itself as a preview. It sends and stores nothing.
+All early-access call-to-action buttons on `mindago.my` point to the Founding 50 onboarding portal at `https://join.mindago.my/founding50`, with footer and policy links referencing:
 
-To connect Google Forms or another form service later:
-
-1. Review and publish the final consent and privacy wording first.
-2. Add the service endpoint and exact field mappings to the form.
-3. Update or remove the submit handler in `script.js` so it no longer intercepts the request.
-4. Keep visible labels, native validation, the consent checkbox, and the accessible status message.
-5. Add success and failure handling that does not expose service or developer terminology.
-6. Test without JavaScript and with keyboard-only navigation.
-7. Update the Privacy and Contact footer copy before collecting any personal information.
-
-Do not place private service credentials in these static files. Use a public form endpoint designed for browser submissions or a protected server-side integration.
+- `https://join.mindago.my/founding50` (Founding 50 registration)
+- `https://join.mindago.my/account` (Parent account & password recovery)
+- `https://join.mindago.my/terms` (Terms & Conditions)
+- `https://join.mindago.my/refunds` (Refund & Cancellation Policy)
+- `https://join.mindago.my/privacy` (Privacy & Child Data Notice)
+- `https://join.mindago.my/seller` (Seller Information / Maklumat Penjual)
 
 ## Release checks
 
 - Verify every `href` fragment points to an existing ID.
 - Confirm all local files referenced by HTML and CSS exist.
-- Test 360px phone, 768px tablet, and 1440px desktop widths.
-- Check keyboard navigation, visible focus, form labels, and the mobile menu.
-- Confirm the Alpha form still sends no data until a reviewed backend is connected.
+- Test 375px, 390px, 768px, 1024px, and 1440px viewport widths.
+- Check keyboard navigation, visible focus, and the mobile menu.
 - Validate `index.html`, `404.html`, `robots.txt`, and `sitemap.xml` after any structural change.

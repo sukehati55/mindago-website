@@ -1686,3 +1686,150 @@ html.has-js [data-reveal].is-visible {
 .az-resource-card { margin-top:1.5rem; padding:1.25rem; border:1px solid var(--line); border-radius:var(--radius-medium, 1rem); background:var(--white); }
 .az-resource-card h3 { margin:0 0 .5rem; }
 .az-resource-card p { margin:0 0 1rem; }
+
+
+/* Founding 50 homepage announcement banner and invitation card */
+.founding50-banner {
+  border-bottom: 1px solid rgba(16, 45, 74, 0.12);
+  background: linear-gradient(90deg, #fff3cf 0%, #fff9ea 52%, #e6f5ff 100%);
+  padding-block: 0.85rem;
+}
+
+.founding50-banner-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+}
+
+.founding50-banner-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+  flex: 1 1 22rem;
+}
+
+.founding50-banner-copy p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.founding50-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 157, 47, 0.45);
+  background: var(--gold-soft);
+  color: var(--navy);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.founding50-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+}
+
+.founding50-banner-link {
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.founding50-banner-link:hover {
+  color: var(--blue);
+}
+
+.playroom-callouts li {
+  align-items: flex-start;
+  padding: 0.7rem 0.85rem;
+}
+
+.playroom-callouts li > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.playroom-callouts li small {
+  color: #cfe1ed;
+  font-size: 0.83rem;
+  line-height: 1.38;
+}
+
+.founding50-invite-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.founding50-invite-header {
+  display: grid;
+  justify-items: start;
+  gap: 0.55rem;
+}
+
+.founding50-invite-header h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.55rem);
+}
+
+.founding50-facts-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.founding50-facts-list li {
+  position: relative;
+  padding: 0.68rem 0.85rem 0.68rem 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: var(--pearl);
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.founding50-facts-list li::before {
+  position: absolute;
+  top: 0.72rem;
+  left: 0.72rem;
+  display: grid;
+  width: 1.15rem;
+  height: 1.15rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sky);
+  color: var(--blue);
+  content: "•";
+  font-weight: 900;
+}
+
+.founding50-facts-list a,
+.form-help a {
+  color: var(--blue);
+  font-weight: 750;
+}
+
+.footer-notes a {
+  color: var(--gold-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.footer-notes a:hover {
+  color: var(--white);
+}
