@@ -83,7 +83,7 @@ Keep these paths stable when replacing approved exports. The Playroom image must
 All early-access call-to-action buttons on `mindago.my` point to the Founding 50 onboarding portal at `https://join.mindago.my/founding50`, with footer and policy links referencing:
 
 - `https://join.mindago.my/founding50` (Founding 50 registration)
-- `https://join.mindago.my/account` (Parent account & password recovery)
+- `https://join.mindago.my/account.html` (Parent account & password recovery)
 - `https://join.mindago.my/terms` (Terms & Conditions)
 - `https://join.mindago.my/refunds` (Refund & Cancellation Policy)
 - `https://join.mindago.my/privacy` (Privacy & Child Data Notice)
