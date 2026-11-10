@@ -70,13 +70,13 @@ Keep that path and filename when replacing the export. Preserve the SVG aspect r
 The homepage uses these approved assets directly:
 
 ```text
-assets/screenshots/playroom_preview_day.png
+assets/screenshots/playroom_25d_revamped.png
 assets/characters/migo_default_1024.png
 assets/characters/mindy_welcome_warm_1024.png
 assets/characters/knowledge_egg_default_1024.png
 ```
 
-Keep these paths stable when replacing approved exports. The Playroom image must retain its 3:2 aspect ratio, and character files must retain transparent backgrounds. Update meaningful alt text whenever the visible content changes materially. Do not use modeling sheets, lesson screenshots, or unapproved drafts on the public site.
+Keep these paths stable when replacing approved exports. The Playroom image must retain its 1810:869 aspect ratio, and character files must retain transparent backgrounds. Update meaningful alt text whenever the visible content changes materially. Do not use modeling sheets, lesson screenshots, or unapproved drafts on the public site.
 
 ## Founding 50 Early Access links
 

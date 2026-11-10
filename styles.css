@@ -490,9 +490,9 @@ html.has-js .site-nav.is-open {
 .playroom-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1810 / 869;
   border-radius: calc(var(--radius-large) - 0.45rem);
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
