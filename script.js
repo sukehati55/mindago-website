@@ -181,6 +181,9 @@ const carouselNext = document.querySelector("[data-carousel-next]");
 const carouselDots = document.querySelectorAll("[data-carousel-dots] [data-slide-index]");
 
 if (carouselTrack) {
+  const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const getScrollBehavior = () => (prefersReducedMotion() ? "auto" : "smooth");
+
   const getCardWidth = () => {
     const card = carouselTrack.querySelector(".gameplay-card");
     return card ? card.offsetWidth + 20 : 320;
@@ -188,13 +191,13 @@ if (carouselTrack) {
 
   if (carouselPrev) {
     carouselPrev.addEventListener("click", () => {
-      carouselTrack.scrollBy({ left: -getCardWidth(), behavior: "smooth" });
+      carouselTrack.scrollBy({ left: -getCardWidth(), behavior: getScrollBehavior() });
     });
   }
 
   if (carouselNext) {
     carouselNext.addEventListener("click", () => {
-      carouselTrack.scrollBy({ left: getCardWidth(), behavior: "smooth" });
+      carouselTrack.scrollBy({ left: getCardWidth(), behavior: getScrollBehavior() });
     });
   }
 
@@ -203,7 +206,7 @@ if (carouselTrack) {
       const index = parseInt(dot.dataset.slideIndex, 10);
       const cards = carouselTrack.querySelectorAll(".gameplay-card");
       if (cards[index]) {
-        cards[index].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        cards[index].scrollIntoView({ behavior: getScrollBehavior(), inline: "center", block: "nearest" });
       }
     });
   });
@@ -227,7 +230,7 @@ if (carouselTrack) {
       carouselDots.forEach((dot, idx) => {
         const isActive = idx === closestIdx;
         dot.classList.toggle("is-active", isActive);
-        dot.setAttribute("aria-selected", String(isActive));
+        dot.setAttribute("aria-current", String(isActive));
       });
     }, 60);
   }, { passive: true });

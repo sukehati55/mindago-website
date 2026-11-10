@@ -1504,6 +1504,13 @@ html.has-js [data-reveal].is-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .gameplay-grid {
+    scroll-behavior: auto !important;
+  }
+
+  .carousel-dot {
+    transition: none !important;
+  }
   html {
     scroll-behavior: auto;
   }
