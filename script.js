@@ -244,39 +244,114 @@ if (carouselTrack) {
 
 
 // ==========================================================================
-// Dual-Preview Sample Switcher (Mobile)
+// Dual-Preview Sample Switcher (Responsive Accessibility)
 // ==========================================================================
 
-document.querySelectorAll("[data-dual-preview]").forEach((container) => {
-  const tabs = Array.from(container.querySelectorAll("[data-preview-target]"));
-  const frames = Array.from(container.querySelectorAll(".gameplay-preview-frame"));
+const dualContainers = Array.from(document.querySelectorAll("[data-dual-preview]"));
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
+if (dualContainers.length > 0) {
+  const desktopQuery = window.matchMedia("(min-width: 768px)");
+
+  const updateDualAccessibility = () => {
+    const isDesktop = desktopQuery.matches;
+
+    dualContainers.forEach((container) => {
+      const switcher = container.querySelector(".gameplay-dual-switcher");
+      const tabs = Array.from(container.querySelectorAll("[data-preview-target]"));
+      const frames = Array.from(container.querySelectorAll(".gameplay-preview-frame"));
+
+      if (switcher) {
+        if (isDesktop) {
+          switcher.setAttribute("aria-hidden", "true");
+        } else {
+          switcher.removeAttribute("aria-hidden");
+        }
+      }
+
+      if (isDesktop) {
+        // Desktop: preview frames are displayed simultaneously side-by-side in a 2-column grid.
+        // Strip tabpanel roles and aria-labelledby so screen readers do not report orphaned tabpanels.
+        frames.forEach((frame) => {
+          frame.removeAttribute("role");
+          frame.removeAttribute("aria-labelledby");
+          frame.removeAttribute("aria-hidden");
+          const zoomBtn = frame.querySelector(".gameplay-zoom-btn");
+          if (zoomBtn) zoomBtn.removeAttribute("tabindex");
+        });
+        tabs.forEach((tab) => {
+          tab.setAttribute("tabindex", "-1");
+        });
+      } else {
+        // Mobile: tabpanel semantics with roving tabindex
+        frames.forEach((frame) => {
+          frame.setAttribute("role", "tabpanel");
+          const idx = frame.dataset.previewIndex;
+          const tab = tabs[parseInt(idx, 10)];
+          if (tab) {
+            frame.setAttribute("aria-labelledby", tab.id);
+          }
+          const isActive = frame.classList.contains("is-active");
+          frame.setAttribute("aria-hidden", isActive ? "false" : "true");
+          const zoomBtn = frame.querySelector(".gameplay-zoom-btn");
+          if (zoomBtn) {
+            zoomBtn.setAttribute("tabindex", isActive ? "0" : "-1");
+          }
+        });
+        tabs.forEach((tab) => {
+          const isActive = tab.classList.contains("is-active");
+          tab.setAttribute("tabindex", isActive ? "0" : "-1");
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+      }
+    });
+  };
+
+  dualContainers.forEach((container) => {
+    const tabs = Array.from(container.querySelectorAll("[data-preview-target]"));
+    const frames = Array.from(container.querySelectorAll(".gameplay-preview-frame"));
+
+    const activateTab = (tab) => {
       const targetIndex = tab.dataset.previewTarget;
       tabs.forEach((t) => {
         const isActive = t === tab;
         t.classList.toggle("is-active", isActive);
         t.setAttribute("aria-selected", isActive ? "true" : "false");
+        t.setAttribute("tabindex", isActive ? "0" : "-1");
       });
       frames.forEach((frame) => {
         const isActive = frame.dataset.previewIndex === targetIndex;
         frame.classList.toggle("is-active", isActive);
+        frame.setAttribute("aria-hidden", isActive ? "false" : "true");
+        const zoomBtn = frame.querySelector(".gameplay-zoom-btn");
+        if (zoomBtn) {
+          zoomBtn.setAttribute("tabindex", isActive ? "0" : "-1");
+        }
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activateTab(tab));
+
+      tab.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+          e.preventDefault();
+          const next = tabs[(index + 1) % tabs.length];
+          activateTab(next);
+          next.focus();
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          const prev = tabs[(index - 1 + tabs.length) % tabs.length];
+          activateTab(prev);
+          prev.focus();
+        }
       });
     });
-
-    tab.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-        e.preventDefault();
-        const next = tabs[(index + 1) % tabs.length];
-        next.click();
-        next.focus();
-      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-        e.preventDefault();
-        const prev = tabs[(index - 1 + tabs.length) % tabs.length];
-        prev.click();
-        prev.focus();
-      }
-    });
   });
-});
+
+  if (typeof desktopQuery.addEventListener === "function") {
+    desktopQuery.addEventListener("change", updateDualAccessibility);
+  } else if (typeof desktopQuery.addListener === "function") {
+    desktopQuery.addListener(updateDualAccessibility);
+  }
+  updateDualAccessibility();
+}
