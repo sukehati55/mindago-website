@@ -200,26 +200,58 @@
             <div class="gameplay-grid" data-carousel-track tabindex="0" aria-label="MindAgo Playroom activities gallery">
               <!-- Item 1: Mathematics -->
               <article class="gameplay-card" data-slide="0">
-                <div class="gameplay-card-media">
-                  <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Mathematics Comparing Quantities screenshot" data-zoom-src="assets/screenshots/playroom_math.png" data-zoom-title="Mathematics · Comparing Quantities" data-zoom-benefit="Children build early number sense by visually comparing concrete objects (such as apples and train cargo) with clear spoken prompts and zero timer stress.">
-                    <img
-                      src="assets/screenshots/playroom_math.png"
-                      alt="MindAgo Mathematics Comparing Quantities activity showing apple group comparison and Professor Mindy guidance"
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="gameplay-zoom-hint" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      Tap to enlarge
-                    </span>
-                  </button>
+                <div class="gameplay-card-media gameplay-dual-media" data-dual-preview>
+                  <div class="gameplay-dual-switcher" role="tablist" aria-label="Mathematics activity previews">
+                    <button type="button" class="gameplay-dual-tab is-active" role="tab" aria-selected="true" aria-controls="math-preview-1" id="math-tab-1" data-preview-target="0">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 1: Basket Counting
+                    </button>
+                    <button type="button" class="gameplay-dual-tab" role="tab" aria-selected="false" aria-controls="math-preview-2" id="math-tab-2" data-preview-target="1">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 2: Comparing
+                    </button>
+                  </div>
+                  <div class="gameplay-dual-frames">
+                    <div class="gameplay-preview-frame is-active" role="tabpanel" id="math-preview-1" aria-labelledby="math-tab-1" data-preview-index="0">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Mathematics Basket Counting screenshot" data-zoom-src="assets/screenshots/playroom_math_basket.png" data-zoom-title="Mathematics · Put 5 Apples in the Basket" data-zoom-benefit="Children develop concrete one-to-one correspondence and counting skills by dragging realistic apples into a woven basket with voice guidance and real-time validation.">
+                        <img
+                          src="assets/screenshots/playroom_math_basket.png"
+                          alt="MindAgo Fill the Basket mathematics activity asking to put 5 apples in the basket with Professor Mindy"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">1. Basket Counting</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                    <div class="gameplay-preview-frame" role="tabpanel" id="math-preview-2" aria-labelledby="math-tab-2" data-preview-index="1">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Mathematics Comparing Quantities screenshot" data-zoom-src="assets/screenshots/playroom_math_compare.png" data-zoom-title="Mathematics · Comparing Quantities" data-zoom-benefit="Children build early number sense by visually comparing concrete objects (such as apples and train cargo) with clear spoken prompts and zero timer stress.">
+                        <img
+                          src="assets/screenshots/playroom_math_compare.png"
+                          alt="MindAgo Mathematics Comparing Quantities activity showing apple group comparison and Professor Mindy guidance"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">2. Comparing Quantities</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="gameplay-card-content">
                   <div class="gameplay-card-tag">Mathematics · Ages 4–6</div>
                   <h3 class="gameplay-card-title">Comparing Quantities &amp; Counting</h3>
-                  <p class="gameplay-card-desc">Children count apples, train loads, and playful toys to understand more, fewer, and equal quantities. Professor Mindy speaks instructions aloud with gentle retry cues.</p>
+                  <p class="gameplay-card-desc">Children count apples into baskets and compare groups to understand more, fewer, and equal quantities. Professor Mindy speaks instructions aloud with gentle retry cues.</p>
                   <ul class="gameplay-card-features">
                     <li>Spoken instructions with instant replay</li>
                     <li>Concrete tactile quantities before abstract numerals</li>
@@ -230,21 +262,53 @@
 
               <!-- Item 2: English Phonics -->
               <article class="gameplay-card" data-slide="1">
-                <div class="gameplay-card-media">
-                  <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge English Blend a Word screenshot" data-zoom-src="assets/screenshots/playroom_english.png" data-zoom-title="Story Corner · Blend a Word" data-zoom-benefit="Preschoolers connect individual letter sounds to form complete words, supported by voice narration and picture clues for confident early reading.">
-                    <img
-                      src="assets/screenshots/playroom_english.png"
-                      alt="MindAgo English Blend a Word activity showing phoneme tiles U, S, N, and Professor Mindy"
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="gameplay-zoom-hint" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      Tap to enlarge
-                    </span>
-                  </button>
+                <div class="gameplay-card-media gameplay-dual-media" data-dual-preview>
+                  <div class="gameplay-dual-switcher" role="tablist" aria-label="English Phonics activity previews">
+                    <button type="button" class="gameplay-dual-tab is-active" role="tab" aria-selected="true" aria-controls="english-preview-1" id="english-tab-1" data-preview-target="0">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 1: Blend SHIP
+                    </button>
+                    <button type="button" class="gameplay-dual-tab" role="tab" aria-selected="false" aria-controls="english-preview-2" id="english-tab-2" data-preview-target="1">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 2: Letter Sounds
+                    </button>
+                  </div>
+                  <div class="gameplay-dual-frames">
+                    <div class="gameplay-preview-frame is-active" role="tabpanel" id="english-preview-1" aria-labelledby="english-tab-1" data-preview-index="0">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge English Blend a Word SHIP screenshot" data-zoom-src="assets/screenshots/playroom_english_ship.png" data-zoom-title="Story Corner · Blend a Word (SHIP)" data-zoom-benefit="Preschoolers connect digraphs and individual letter sounds (SH, I, P) to form complete words, supported by voice narration and picture clues for confident early reading.">
+                        <img
+                          src="assets/screenshots/playroom_english_ship.png"
+                          alt="MindAgo English Blend a Word activity showing a colorful ship illustration, letter tiles I, SH, P, and Professor Mindy"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">1. Blend SHIP</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                    <div class="gameplay-preview-frame" role="tabpanel" id="english-preview-2" aria-labelledby="english-tab-2" data-preview-index="1">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge English Letter Sounds screenshot" data-zoom-src="assets/screenshots/playroom_english_phonics.png" data-zoom-title="Story Corner · Which Letter Makes This Sound?" data-zoom-benefit="Children develop auditory phonemic awareness by hearing spoken letter sounds and identifying the matching grapheme card without pressure.">
+                        <img
+                          src="assets/screenshots/playroom_english_phonics.png"
+                          alt="MindAgo English Letter Sounds activity showing phonics listening question with letter choice cards and Professor Mindy"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">2. Letter Sounds</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="gameplay-card-content">
                   <div class="gameplay-card-tag">English · Phonics</div>
@@ -260,21 +324,53 @@
 
               <!-- Item 3: Creative Easel -->
               <article class="gameplay-card" data-slide="2">
-                <div class="gameplay-card-media">
-                  <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Creative Easel Trace the Shape screenshot" data-zoom-src="assets/screenshots/playroom_easel.png" data-zoom-title="Creative Easel · Shape Tracing" data-zoom-benefit="Gentle tracing paths with glowing guide points train pencil grip, hand-eye coordination, and pre-writing confidence on touchscreens.">
-                    <img
-                      src="assets/screenshots/playroom_easel.png"
-                      alt="MindAgo Creative Easel Trace the Shape activity showing circle tracing canvas and glowing guide"
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="gameplay-zoom-hint" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      Tap to enlarge
-                    </span>
-                  </button>
+                <div class="gameplay-card-media gameplay-dual-media" data-dual-preview>
+                  <div class="gameplay-dual-switcher" role="tablist" aria-label="Creative Easel activity previews">
+                    <button type="button" class="gameplay-dual-tab is-active" role="tab" aria-selected="true" aria-controls="easel-preview-1" id="easel-tab-1" data-preview-target="0">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 1: Shape Tracing
+                    </button>
+                    <button type="button" class="gameplay-dual-tab" role="tab" aria-selected="false" aria-controls="easel-preview-2" id="easel-tab-2" data-preview-target="1">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 2: Colour &amp; Paint
+                    </button>
+                  </div>
+                  <div class="gameplay-dual-frames">
+                    <div class="gameplay-preview-frame is-active" role="tabpanel" id="easel-preview-1" aria-labelledby="easel-tab-1" data-preview-index="0">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Creative Easel Shape Tracing screenshot" data-zoom-src="assets/screenshots/playroom_easel_trace.png" data-zoom-title="Creative Easel · Shape Tracing" data-zoom-benefit="Gentle tracing paths with glowing guide points train pencil grip, hand-eye coordination, and pre-writing confidence on touchscreens.">
+                        <img
+                          src="assets/screenshots/playroom_easel_trace.png"
+                          alt="MindAgo Creative Easel Trace the Shape activity showing circle tracing canvas and glowing guide"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">1. Shape Tracing</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                    <div class="gameplay-preview-frame" role="tabpanel" id="easel-preview-2" aria-labelledby="easel-tab-2" data-preview-index="1">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Creative Easel Colour and Paint screenshot" data-zoom-src="assets/screenshots/playroom_easel_paint.png" data-zoom-title="Creative Easel · Colour &amp; Paint" data-zoom-benefit="Open-ended digital colouring with tactile palettes and custom brush widths encourages creative expression, focus, and visual aesthetics.">
+                        <img
+                          src="assets/screenshots/playroom_easel_paint.png"
+                          alt="MindAgo Creative Easel Colour and Paint activity showing a sailboat canvas, colour palette, and paintbrush tools"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">2. Colour &amp; Paint</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="gameplay-card-content">
                   <div class="gameplay-card-tag">Creative Easel · Motor Skills</div>
@@ -290,21 +386,53 @@
 
               <!-- Item 4: Building Blocks -->
               <article class="gameplay-card" data-slide="3">
-                <div class="gameplay-card-media">
-                  <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Building Blocks Picture Puzzle screenshot" data-zoom-src="assets/screenshots/playroom_blocks.png" data-zoom-title="Building Blocks · Picture Puzzles" data-zoom-benefit="Spatial piece-fitting exercises develop shape orientation, spatial reasoning, and persistent problem solving in a warm playroom atmosphere.">
-                    <img
-                      src="assets/screenshots/playroom_blocks.png"
-                      alt="MindAgo Building Blocks Picture Puzzle activity showing cat puzzle pieces and block castle"
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="gameplay-zoom-hint" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      Tap to enlarge
-                    </span>
-                  </button>
+                <div class="gameplay-card-media gameplay-dual-media" data-dual-preview>
+                  <div class="gameplay-dual-switcher" role="tablist" aria-label="Building Blocks activity previews">
+                    <button type="button" class="gameplay-dual-tab is-active" role="tab" aria-selected="true" aria-controls="blocks-preview-1" id="blocks-tab-1" data-preview-target="0">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 1: Cat Puzzle
+                    </button>
+                    <button type="button" class="gameplay-dual-tab" role="tab" aria-selected="false" aria-controls="blocks-preview-2" id="blocks-tab-2" data-preview-target="1">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 2: Silhouette Match
+                    </button>
+                  </div>
+                  <div class="gameplay-dual-frames">
+                    <div class="gameplay-preview-frame is-active" role="tabpanel" id="blocks-preview-1" aria-labelledby="blocks-tab-1" data-preview-index="0">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Building Blocks Picture Puzzle Cat screenshot" data-zoom-src="assets/screenshots/playroom_blocks_picture.png" data-zoom-title="Building Blocks · Picture Puzzle (Cat)" data-zoom-benefit="Spatial piece-fitting exercises develop shape orientation, spatial reasoning, and persistent problem solving in a warm playroom atmosphere.">
+                        <img
+                          src="assets/screenshots/playroom_blocks_picture.png"
+                          alt="MindAgo Building Blocks Picture Puzzle activity showing cat puzzle pieces and block castle"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">1. Cat Puzzle</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                    <div class="gameplay-preview-frame" role="tabpanel" id="blocks-preview-2" aria-labelledby="blocks-tab-2" data-preview-index="1">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Building Blocks Silhouette Match screenshot" data-zoom-src="assets/screenshots/playroom_blocks_spatial.png" data-zoom-title="Building Blocks · Silhouette Match" data-zoom-benefit="Shape discrimination challenges train children to recognize contours, outlines, and geometric silhouettes through tactile drag-and-drop matching.">
+                        <img
+                          src="assets/screenshots/playroom_blocks_spatial.png"
+                          alt="MindAgo Building Blocks Silhouette Match activity showing animal shadow silhouette and draggable picture cards"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">2. Silhouette Match</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="gameplay-card-content">
                   <div class="gameplay-card-tag">Building Blocks · Spatial Logic</div>
@@ -320,21 +448,53 @@
 
               <!-- Item 5: Bookshelf -->
               <article class="gameplay-card" data-slide="4">
-                <div class="gameplay-card-media">
-                  <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Bookshelf First Words Animals screenshot" data-zoom-src="assets/screenshots/playroom_bookshelf.png" data-zoom-title="Bookshelf · Read-and-Listen Books" data-zoom-benefit="Child-paced picture books foster word recognition, auditory comprehension, and a lifelong love of reading without distracting pop-ups.">
-                    <img
-                      src="assets/screenshots/playroom_bookshelf.png"
-                      alt="MindAgo Bookshelf First Words Animals picture book page showing cat illustration and audio controls"
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="gameplay-zoom-hint" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      Tap to enlarge
-                    </span>
-                  </button>
+                <div class="gameplay-card-media gameplay-dual-media" data-dual-preview>
+                  <div class="gameplay-dual-switcher" role="tablist" aria-label="Bookshelf activity previews">
+                    <button type="button" class="gameplay-dual-tab is-active" role="tab" aria-selected="true" aria-controls="bookshelf-preview-1" id="bookshelf-tab-1" data-preview-target="0">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 1: First Words
+                    </button>
+                    <button type="button" class="gameplay-dual-tab" role="tab" aria-selected="false" aria-controls="bookshelf-preview-2" id="bookshelf-tab-2" data-preview-target="1">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 2: Storybook
+                    </button>
+                  </div>
+                  <div class="gameplay-dual-frames">
+                    <div class="gameplay-preview-frame is-active" role="tabpanel" id="bookshelf-preview-1" aria-labelledby="bookshelf-tab-1" data-preview-index="0">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Bookshelf First Words Animals screenshot" data-zoom-src="assets/screenshots/playroom_bookshelf_words.png" data-zoom-title="Bookshelf · First Words (Animals)" data-zoom-benefit="Child-paced vocabulary picture books foster word recognition, auditory comprehension, and a lifelong love of reading without distracting pop-ups.">
+                        <img
+                          src="assets/screenshots/playroom_bookshelf_words.png"
+                          alt="MindAgo Bookshelf First Words Animals picture book page showing cat illustration and audio controls"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">1. First Words</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                    <div class="gameplay-preview-frame" role="tabpanel" id="bookshelf-preview-2" aria-labelledby="bookshelf-tab-2" data-preview-index="1">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Bookshelf Illustrated Storybook screenshot" data-zoom-src="assets/screenshots/playroom_bookshelf_story.png" data-zoom-title="Bookshelf · Illustrated Storybook (The Red Ball)" data-zoom-benefit="Sentence-level read-aloud storybooks build early listening comprehension, story sequencing, and sentence structure with comforting narrated story time.">
+                        <img
+                          src="assets/screenshots/playroom_bookshelf_story.png"
+                          alt="MindAgo Bookshelf Story Time page showing The Red Ball illustrated book page with Professor Mindy reading narration"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">2. Storybook</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="gameplay-card-content">
                   <div class="gameplay-card-tag">Bookshelf · Early Literacy</div>
@@ -350,21 +510,53 @@
 
               <!-- Item 6: Knowledge Egg -->
               <article class="gameplay-card" data-slide="5">
-                <div class="gameplay-card-media">
-                  <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Knowledge Egg progress screen screenshot" data-zoom-src="assets/screenshots/playroom_egg.png" data-zoom-title="Knowledge Egg · Calming Growth" data-zoom-benefit="Replaces anxiety-inducing scoreboards with a visual, nurturing milestone that celebrates effort, curiosity, and completed learning sessions.">
-                    <img
-                      src="assets/screenshots/playroom_egg.png"
-                      alt="MindAgo Knowledge Egg progress screen showing cracking Nature Egg and Professor Mindy dialogue"
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <span class="gameplay-zoom-hint" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                      Tap to enlarge
-                    </span>
-                  </button>
+                <div class="gameplay-card-media gameplay-dual-media" data-dual-preview>
+                  <div class="gameplay-dual-switcher" role="tablist" aria-label="Knowledge Egg activity previews">
+                    <button type="button" class="gameplay-dual-tab is-active" role="tab" aria-selected="true" aria-controls="egg-preview-1" id="egg-tab-1" data-preview-target="0">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 1: Egg Growth
+                    </button>
+                    <button type="button" class="gameplay-dual-tab" role="tab" aria-selected="false" aria-controls="egg-preview-2" id="egg-tab-2" data-preview-target="1">
+                      <span class="gameplay-dual-tab-dot" aria-hidden="true"></span>
+                      Sample 2: Companion Reveal
+                    </button>
+                  </div>
+                  <div class="gameplay-dual-frames">
+                    <div class="gameplay-preview-frame is-active" role="tabpanel" id="egg-preview-1" aria-labelledby="egg-tab-1" data-preview-index="0">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Knowledge Egg Companion Growth screenshot" data-zoom-src="assets/screenshots/playroom_egg_progress.png" data-zoom-title="Knowledge Egg · Companion Growth Progress" data-zoom-benefit="Replaces anxiety-inducing scoreboards with a visual, nurturing milestone that celebrates effort, curiosity, and completed learning sessions.">
+                        <img
+                          src="assets/screenshots/playroom_egg_progress.png"
+                          alt="MindAgo Knowledge Egg progress screen showing cracking Nature Egg on pedestal with XP counter and Professor Mindy dialogue"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">1. Egg Growth</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                    <div class="gameplay-preview-frame" role="tabpanel" id="egg-preview-2" aria-labelledby="egg-tab-2" data-preview-index="1">
+                      <button type="button" class="gameplay-zoom-btn" aria-label="Enlarge Knowledge Egg Companion Reveal screenshot" data-zoom-src="assets/screenshots/playroom_egg_reward.png" data-zoom-title="Knowledge Egg · Companion Reveal Reward" data-zoom-benefit="Reaching learning milestones rewards children with an adorable companion character reveal, cultivating intrinsic motivation and pride in their learning journey.">
+                        <img
+                          src="assets/screenshots/playroom_egg_reward.png"
+                          alt="MindAgo Knowledge Egg celebration screen showing hatched companion reward Flora with joyful celebration"
+                          width="1280"
+                          height="800"
+                          loading="lazy"
+                          decoding="async"
+                        >
+                        <span class="gameplay-preview-pill" aria-hidden="true">2. Companion Reveal</span>
+                        <span class="gameplay-zoom-hint" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                          Enlarge
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="gameplay-card-content">
                   <div class="gameplay-card-tag">Progress &amp; Motivation</div>
@@ -376,8 +568,7 @@
                     <li>No public leaderboards, competitive ranks, or countdown timers</li>
                   </ul>
                 </div>
-              </article>
-            </div>
+              </article>            </div>
           </div>
 
           <div class="gameplay-cta-box" data-reveal>

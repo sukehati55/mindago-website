@@ -125,9 +125,11 @@ if (gameplayDialog) {
   const dialogTitle = gameplayDialog.querySelector("[data-dialog-title]");
   const dialogBenefit = gameplayDialog.querySelector("[data-dialog-benefit]");
   const dialogClose = gameplayDialog.querySelector("[data-dialog-close]");
+  let activeThumbnail = null;
 
   const openLightbox = (btn) => {
     if (!dialogImg || !dialogTitle || !dialogBenefit) return;
+    activeThumbnail = btn;
     dialogImg.src = btn.dataset.zoomSrc;
     dialogImg.alt = btn.querySelector("img")?.alt || btn.dataset.zoomTitle;
     dialogTitle.textContent = btn.dataset.zoomTitle;
@@ -144,6 +146,10 @@ if (gameplayDialog) {
       gameplayDialog.close();
     } else {
       gameplayDialog.removeAttribute("open");
+    }
+    if (activeThumbnail && typeof activeThumbnail.focus === "function") {
+      activeThumbnail.focus();
+      activeThumbnail = null;
     }
   };
 
@@ -235,3 +241,42 @@ if (carouselTrack) {
     }, 60);
   }, { passive: true });
 }
+
+
+// ==========================================================================
+// Dual-Preview Sample Switcher (Mobile)
+// ==========================================================================
+
+document.querySelectorAll("[data-dual-preview]").forEach((container) => {
+  const tabs = Array.from(container.querySelectorAll("[data-preview-target]"));
+  const frames = Array.from(container.querySelectorAll(".gameplay-preview-frame"));
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      const targetIndex = tab.dataset.previewTarget;
+      tabs.forEach((t) => {
+        const isActive = t === tab;
+        t.classList.toggle("is-active", isActive);
+        t.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      frames.forEach((frame) => {
+        const isActive = frame.dataset.previewIndex === targetIndex;
+        frame.classList.toggle("is-active", isActive);
+      });
+    });
+
+    tab.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        const next = tabs[(index + 1) % tabs.length];
+        next.click();
+        next.focus();
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        const prev = tabs[(index - 1 + tabs.length) % tabs.length];
+        prev.click();
+        prev.focus();
+      }
+    });
+  });
+});
