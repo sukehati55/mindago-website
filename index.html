@@ -14,7 +14,7 @@
     <title>Preschool Learning App for Ages 4–6 | MindAgo Playroom</title>
     <link rel="canonical" href="https://mindago.my/">
     <link rel="icon" href="assets/branding/mindago_emblem.png?v=20260922c" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=20261110b">
+    <link rel="stylesheet" href="styles.css?v=20261117a">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MindAgo">
@@ -76,7 +76,7 @@
         }
       }
     </script>
-    <script src="script.js?v=20261110b" defer></script>
+    <script src="script.js?v=20261117a" defer></script>
     <script src="/analytics.js?v=20260928b" defer></script>
     <link rel="stylesheet" href="/typography.css?v=20260928a">
     <link rel="stylesheet" href="/header.css?v=20260928a">
@@ -185,6 +185,32 @@
             <p class="section-summary">
               Step inside with your preschooler. Every station offers voice-guided activities designed for ages 4–6—with gentle retries, playful rewards, on-device progress tracking, and zero advertising or in-app purchases.
             </p>
+          </div>
+
+          <!-- The video feature stays hidden until the exact MP4 is hosted on this domain. -->
+          <div class="playroom-video-feature" data-playroom-video-feature hidden>
+            <div class="playroom-video-feature__intro">
+              <div>
+                <p class="eyebrow">Real Playroom screen recording</p>
+                <h3 id="playroom-video-title">Watch learning in action — 50 seconds</h3>
+                <p>Explore actual Picture Puzzle, Mathematics Counting, English Rhyme Play and Color &amp; Paint gameplay. No stock footage or AI-generated scenes.</p>
+              </div>
+              <a class="button button-primary" href="https://join.mindago.my/founding50">Explore Early Access</a>
+            </div>
+            <video
+              class="playroom-video-feature__player"
+              controls
+              playsinline
+              preload="none"
+              width="1680"
+              height="720"
+              poster="/assets/screenshots/playroom_25d_revamped.png"
+              aria-label="MindAgo Playroom 50-second educational activities video"
+            >
+              <source src="/assets/videos/mindago-playroom-activities-only-50s.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <p class="playroom-video-feature__note">Genuine gameplay captured inside MindAgo Playroom. Video playback is optional; explore the activity screenshots below.</p>
           </div>
 
           <div class="gameplay-carousel-wrapper" data-reveal>
