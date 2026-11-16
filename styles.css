@@ -2400,3 +2400,62 @@ html.has-js [data-reveal].is-visible {
   font-size: 0.92rem;
   line-height: 1.5;
 }
+
+
+/* Authentic Playroom video — unobtrusive until a real MP4 is deployed. */
+.playroom-video-feature[hidden] {
+  display: none !important;
+}
+.playroom-video-feature {
+  max-width: 1050px;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  padding: clamp(1rem, 2.8vw, 1.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+.playroom-video-feature__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.playroom-video-feature__intro h3 {
+  color: var(--navy);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  margin: 0.25rem 0 0.5rem;
+}
+.playroom-video-feature__intro p:not(.eyebrow) {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+.playroom-video-feature__player {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 7 / 3;
+  background: #15202b;
+  border-radius: calc(var(--radius-large) / 2);
+  object-fit: contain;
+}
+.playroom-video-feature__note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0.75rem 0 0;
+}
+@media (min-width: 740px) {
+  .playroom-video-feature__intro {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+  .playroom-video-feature__intro .button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
