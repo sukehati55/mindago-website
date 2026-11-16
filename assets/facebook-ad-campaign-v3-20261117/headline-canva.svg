@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="88" viewBox="0 0 1024 88">
+<rect x="12" y="13" width="1000" height="70" rx="30" fill="#FFBB42"/>
+<rect x="9" y="5" width="1000" height="71" rx="30" fill="#3E258D" stroke="#FFFFFF" stroke-width="5"/>
+<circle cx="52" cy="40" r="19" fill="#FFD44C"/>
+<circle cx="961" cy="40" r="19" fill="#43DDE0"/>
+<text x="510" y="54" text-anchor="middle" fill="#FFFFFF" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="800" letter-spacing="-1">LEARNING THAT FEELS LIKE PLAY!</text>
+</svg>
