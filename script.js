@@ -355,3 +355,22 @@ if (dualContainers.length > 0) {
   }
   updateDualAccessibility();
 }
+
+
+// Reveal the real-gameplay video only when its MP4 is deployed.
+// A missing file must never produce a broken player on the public site.
+const playroomVideoFeature = document.querySelector("[data-playroom-video-feature]");
+const playroomVideoSource = playroomVideoFeature?.querySelector("video source");
+if (playroomVideoFeature && playroomVideoSource && typeof window.fetch === "function") {
+  const sourceUrl = playroomVideoSource.getAttribute("src");
+  window.fetch(sourceUrl, { method: "HEAD", cache: "no-store" })
+    .then((response) => {
+      const mediaType = (response.headers.get("content-type") || "").toLowerCase();
+      if (response.ok && mediaType.includes("video/")) {
+        playroomVideoFeature.hidden = false;
+      }
+    })
+    .catch(() => {
+      // Keep the screenshot gallery available if the video cannot be fetched.
+    });
+}
