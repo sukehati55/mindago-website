@@ -1,5 +1,11 @@
 # First 10 families — SEO and analytics repair (25 November 2026)
 
+> Release update: the owner-approved exact-host redirect is now live as rule
+> `28f6841e1f6145029c45ff226be07216`, using the supported `not ssl` condition.
+> Live one-hop 301/path/query checks passed. The original audit below records
+> the earlier preparation state. See [final acceptance](FIRST10_RELEASE_ACCEPTANCE.md)
+> for the current configuration, commercial discrepancies and GA4 gates.
+
 Review candidate on `codex/first10-seo-analytics`, based on website main
 `4c124c369ab686ad59bcd8d85d0c3517e75cf99b`. No production deployment or dashboard
 settings change is included. Existing pricing remains US$4.99 once for six

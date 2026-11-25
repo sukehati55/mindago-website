@@ -2,7 +2,7 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const rule=require('../integrations/cloudflare-canonical-redirect.json');
 test('reviewed Cloudflare redirect contract is exact-host, permanent and query preserving',()=>{
-  assert.equal(rule.expression,'(http.host eq "www.mindago.my") or (http.host eq "mindago.my" and http.request.scheme eq "http")');
+  assert.equal(rule.expression,'(http.host eq "www.mindago.my") or (http.host eq "mindago.my" and not ssl)');
   assert.equal(rule.action_parameters.from_value.status_code,301);
   assert.equal(rule.action_parameters.from_value.preserve_query_string,true);
   assert.equal(rule.action_parameters.from_value.target_url.expression,'concat("https://mindago.my", http.request.uri.path)');
