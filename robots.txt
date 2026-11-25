@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /scripts/
+Disallow: /tests/
+Disallow: /integrations/
 
 Sitemap: https://mindago.my/sitemap.xml
