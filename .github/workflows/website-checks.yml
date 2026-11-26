@@ -11,4 +11,6 @@ jobs:
         run: python3 scripts/audit_site.py
       - name: Consent, privacy, events and redirect contract
         run: node --test tests/*.test.cjs
+      - name: Reproducible production artifact with optional GA4 off
+        run: python3 scripts/build_release.py --analytics off --output /tmp/mindago-release
       - run: git diff --check
