@@ -71,3 +71,10 @@
     border-bottom:1px solid rgba(0,0,0,.06);
   }
 }
+/* Contextual links keep printable resources connected to the existing Playroom offer. */
+.playroom-resource-link { background: #eef9ff; color: #0c3052; padding: clamp(2rem, 5vw, 3.5rem) 1.25rem; }
+.playroom-resource-link__inner { max-width: 65rem; margin-inline: auto; }
+.playroom-resource-link h2 { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.25; margin: 0 0 1rem; }
+.playroom-resource-link p { max-width: 70ch; line-height: 1.65; }
+.playroom-resource-link a { color: #075a91; text-underline-offset: .2em; }
+.playroom-resource-link a:focus-visible { outline: 3px solid #075a91; outline-offset: 4px; }

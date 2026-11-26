@@ -1,0 +1,14 @@
+name: Website SEO and consent checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Static crawl, canonical URLs, sitemap and internal links
+        run: python3 scripts/audit_site.py
+      - name: Consent, privacy, events and redirect contract
+        run: node --test tests/*.test.cjs
+      - run: git diff --check

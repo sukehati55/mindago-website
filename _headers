@@ -1,0 +1,8 @@
+/docs/*
+  X-Robots-Tag: noindex
+/scripts/*
+  X-Robots-Tag: noindex
+/tests/*
+  X-Robots-Tag: noindex
+/integrations/*
+  X-Robots-Tag: noindex
